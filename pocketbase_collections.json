@@ -1,0 +1,142 @@
+{
+  "collections": [
+    {
+      "id": "comments",
+      "name": "comments",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "id": "campaign_address",
+          "name": "campaign_address",
+          "type": "text",
+          "required": true,
+          "presentable": false,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "commenter_address",
+          "name": "commenter_address",
+          "type": "text",
+          "required": true,
+          "presentable": false,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "commenter_name",
+          "name": "commenter_name",
+          "type": "text",
+          "required": false,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "content",
+          "name": "content",
+          "type": "text",
+          "required": true,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        }
+      ],
+      "indexes": [],
+      "listRule": null,
+      "viewRule": null,
+      "createRule": null,
+      "updateRule": null,
+      "deleteRule": null,
+      "options": {}
+    },
+    {
+      "id": "leaderboard",
+      "name": "leaderboard",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "id": "supporter_address",
+          "name": "supporter_address",
+          "type": "text",
+          "required": true,
+          "presentable": true,
+          "unique": true,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "total_funded",
+          "name": "total_funded",
+          "type": "number",
+          "required": true,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "min": 0,
+            "max": null,
+            "noDecimal": false
+          }
+        },
+        {
+          "id": "campaign_count",
+          "name": "campaign_count",
+          "type": "number",
+          "required": true,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "min": 0,
+            "max": null,
+            "noDecimal": true
+          }
+        },
+        {
+          "id": "badge_level",
+          "name": "badge_level",
+          "type": "select",
+          "required": true,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "maxSelect": 1,
+            "values": [
+              "bronze",
+              "silver",
+              "gold",
+              "platinum"
+            ]
+          }
+        }
+      ],
+      "indexes": [],
+      "listRule": null,
+      "viewRule": null,
+      "createRule": null,
+      "updateRule": null,
+      "deleteRule": null,
+      "options": {}
+    }
+  ]
+}

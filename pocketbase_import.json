@@ -1,0 +1,110 @@
+{
+  "collections": [
+    {
+      "id": "campaign_feedback",
+      "name": "campaign_feedback",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "id": "campaign_address",
+          "name": "campaign_address",
+          "type": "text",
+          "required": true,
+          "presentable": false,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "commenter_address",
+          "name": "commenter_address",
+          "type": "text",
+          "required": true,
+          "presentable": false,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "commenter_name",
+          "name": "commenter_name",
+          "type": "text",
+          "required": false,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "content",
+          "name": "content",
+          "type": "text",
+          "required": true,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "reply_to_id",
+          "name": "reply_to_id",
+          "type": "text",
+          "required": false,
+          "presentable": false,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "id": "likes",
+          "name": "likes",
+          "type": "number",
+          "required": false,
+          "presentable": true,
+          "unique": false,
+          "options": {
+            "min": 0,
+            "max": null,
+            "noDecimal": true
+          }
+        },
+        {
+          "id": "is_creator",
+          "name": "is_creator",
+          "type": "bool",
+          "required": false,
+          "presentable": true,
+          "unique": false,
+          "options": {}
+        }
+      ],
+      "indexes": [
+        "CREATE INDEX idx_campaign_address on campaign_feedback (campaign_address)",
+        "CREATE INDEX idx_commenter_address on campaign_feedback (commenter_address)",
+        "CREATE INDEX idx_reply_to_id on campaign_feedback (reply_to_id)"
+      ],
+      "listRule": "",
+      "viewRule": "",
+      "createRule": "",
+      "updateRule": "id = @request.auth.id || is_creator = true",
+      "deleteRule": "commenter_address = @request.body.commenter_address || is_creator = true",
+      "options": {}
+    }
+  ]
+}

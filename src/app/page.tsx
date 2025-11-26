@@ -61,6 +61,55 @@ export default function Home() {
   </div>
 </div>
 
+{/* Creator Features - Compact Section */}
+<section className="py-4 sm:py-6 lg:py-8 -mt-2 sm:-mt-3 relative z-20">
+  <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 lg:gap-4">
+      {/* Feature 1 */}
+      <div className="bg-gradient-to-br from-purple-900/40 to-purple-900/20 rounded-lg p-3 sm:p-4 border border-purple-500/30 text-center hover:border-purple-500/60 transition-all">
+        <div className="text-lg sm:text-2xl mb-1">🔐</div>
+        <h4 className="text-xs sm:text-sm font-bold text-white mb-0.5">Protect IP</h4>
+        <p className="text-xs text-gray-300 leading-tight">On-chain auth</p>
+      </div>
+
+      {/* Feature 2 */}
+      <div className="bg-gradient-to-br from-emerald-900/40 to-emerald-900/20 rounded-lg p-3 sm:p-4 border border-emerald-500/30 text-center hover:border-emerald-500/60 transition-all">
+        <div className="text-lg sm:text-2xl mb-1">⚡</div>
+        <h4 className="text-xs sm:text-sm font-bold text-white mb-0.5">Tokenize</h4>
+        <p className="text-xs text-gray-300 leading-tight">As RWA</p>
+      </div>
+
+      {/* Feature 3 */}
+      <div className="bg-gradient-to-br from-rose-900/40 to-rose-900/20 rounded-lg p-3 sm:p-4 border border-rose-500/30 text-center hover:border-rose-500/60 transition-all">
+        <div className="text-lg sm:text-2xl mb-1">🚀</div>
+        <h4 className="text-xs sm:text-sm font-bold text-white mb-0.5">Decentralized</h4>
+        <p className="text-xs text-gray-300 leading-tight">Funding</p>
+      </div>
+
+      {/* Feature 4 */}
+      <div className="bg-gradient-to-br from-indigo-900/40 to-indigo-900/20 rounded-lg p-3 sm:p-4 border border-indigo-500/30 text-center hover:border-indigo-500/60 transition-all">
+        <div className="text-lg sm:text-2xl mb-1">🎨</div>
+        <h4 className="text-xs sm:text-sm font-bold text-white mb-0.5">Remix</h4>
+        <p className="text-xs text-gray-300 leading-tight">& Collaborate</p>
+      </div>
+
+      {/* Feature 5 */}
+      <div className="bg-gradient-to-br from-pink-900/40 to-pink-900/20 rounded-lg p-3 sm:p-4 border border-pink-500/30 text-center hover:border-pink-500/60 transition-all">
+        <div className="text-lg sm:text-2xl mb-1">👥</div>
+        <h4 className="text-xs sm:text-sm font-bold text-white mb-0.5">Community</h4>
+        <p className="text-xs text-gray-300 leading-tight">& NFTs</p>
+      </div>
+
+      {/* Feature 6 */}
+      <div className="bg-gradient-to-br from-amber-900/40 to-amber-900/20 rounded-lg p-3 sm:p-4 border border-amber-500/30 text-center hover:border-amber-500/60 transition-all">
+        <div className="text-lg sm:text-2xl mb-1">💰</div>
+        <h4 className="text-xs sm:text-sm font-bold text-white mb-0.5">Monetize</h4>
+        <p className="text-xs text-gray-300 leading-tight">Real benefits</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 {/* How It Works Section */}
 <section className="py-8 sm:py-12 lg:py-16 relative">
   <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">

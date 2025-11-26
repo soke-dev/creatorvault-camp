@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { isValidImageUrl, getProxiedImageUrl, testImageUrl } from '../utils/imageValidation';
+import { devLog } from '@/utils/debugLog';
 
 interface UseImageStateReturn {
   imageUrl: string | null;

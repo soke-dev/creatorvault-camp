@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { campaignSupporterService } from '@/lib/pocketbase';
+import { devLog } from '@/utils/debugLog';
 
 export async function GET(
   request: NextRequest,

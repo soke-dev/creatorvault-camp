@@ -46,6 +46,9 @@ localStorage_analysis.md
 *_fixed.*
 /src/app/test-*
 
+# PocketBase import scripts with credentials
+import-bounty-schema.js
+
 # Local Netlify folder
 .netlify
 

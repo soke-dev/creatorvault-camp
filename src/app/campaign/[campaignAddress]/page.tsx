@@ -32,6 +32,7 @@ import Image from 'next/image';
 import { campaignImageService, campaignAudioService, campaignVideoService, campaignSupporterService, campaignFundingService, campaignNFTService, campaignContactService, leaderboardService } from '@/lib/pocketbase';
 import { ImageOptimizer } from '@/utils/imageOptimization';
 import { useToast } from '@/components/Toast';
+import PromoteCampaignModal from '@/components/PromoteCampaignModal';
 
 export default function CampaignPage() {
   const account = useActiveAccount();
@@ -39,6 +40,7 @@ export default function CampaignPage() {
   const { showSuccess, showError, showInfo } = useToast();
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [showPromoteModal, setShowPromoteModal] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState<string>("");
   const [showContactForm, setShowContactForm] = useState(false);
   const [campaignImage, setCampaignImage] = useState<string>("");
@@ -1026,10 +1028,23 @@ export default function CampaignPage() {
 
                 {/* Right Side - Campaign Details */}
                 <div className="lg:w-2/3 p-6">
-                    {/* Campaign Title */}
-                    <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                        {name || "Loading..."}
-                    </h1>
+                    {/* Campaign Title and Promote Button */}
+                    <div className="flex items-start justify-between mb-4">
+                        <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-100 flex-1">
+                            {name || "Loading..."}
+                        </h1>
+                        {account?.address === owner && (
+                            <button
+                                onClick={() => setShowPromoteModal(true)}
+                                className="ml-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm font-semibold rounded-xl hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                                </svg>
+                                Promote
+                            </button>
+                        )}
+                    </div>
                     
                     {/* Category and Status Badges */}
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -1771,6 +1786,17 @@ export default function CampaignPage() {
             contract={contract}
             showSuccess={showSuccess}
             showError={showError}
+        />
+    )}
+
+    {/* Promote Campaign Modal */}
+    {showPromoteModal && (
+        <PromoteCampaignModal
+            isOpen={showPromoteModal}
+            onClose={() => setShowPromoteModal(false)}
+            campaignAddress={campaignAddress as string}
+            campaignName={name || 'Campaign'}
+            creatorAddress={account?.address || ''}
         />
     )}
     </div>

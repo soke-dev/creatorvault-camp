@@ -111,6 +111,12 @@ const Navbar = () => {
                                         <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-700 via-purple-500 to-[#f45a06] group-hover:w-full transition-all duration-300"></div>
                                     </div>
                                 </Link>
+                                <Link href="/bounty">
+                                    <div className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors duration-300 cursor-pointer">
+                                        Bounties
+                                        <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-700 via-purple-500 to-[#f45a06] group-hover:w-full transition-all duration-300"></div>
+                                    </div>
+                                </Link>
                                 {account && (
                                     <Link href={`/dashboard/${account?.address}`}>
                                         <div className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors duration-300 cursor-pointer">
@@ -165,6 +171,11 @@ const Navbar = () => {
                         <Link href="/explore">
                             <div className="block rounded-xl px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-purple-700 dark:hover:text-purple-400 transition-all duration-300 cursor-pointer">
                                 Explore
+                            </div>
+                        </Link>
+                        <Link href="/bounty">
+                            <div className="block rounded-xl px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-purple-700 dark:hover:text-purple-400 transition-all duration-300 cursor-pointer">
+                                Bounties
                             </div>
                         </Link>
                         {account && (

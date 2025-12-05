@@ -12,6 +12,11 @@
     --text-color: #d1d5db;
 }
 
+@keyframes progressBar {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
 /* Define custom utility classes */
 @layer utilities {
     .bg-primary-dark {
